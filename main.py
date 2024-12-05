@@ -17,19 +17,28 @@ class student():
             raise ValueError("invalid student id")
         self.student_id = student_id
     
+    #function to return string displaying all the students key attributes
     def __str__(self):
         return f"name: {self.name} \ndegree: {self.degree}\nstudent ID: {self.student_id}"
+    
+    #getter for degree
+    @property
+    def degree(self):
+        return self._degree
+    
+    #setter for degree
+    @degree.setter
+    def degree(self, degree):
+        if degree not in ["ECE", "BIO", "MECH", "EEE"]:
+            raise ValueError("Invalid degree")
+        self._degree = degree
+
+class 
 
 def main():
-    Student = newstudent()
-    print(f"name: {Student.name} \ndegree: {Student.degree}\nstudent ID: {Student.student_id}")
+    
 
-def newstudent():
-    name = input("Name: ")
-    degree = input("degree: ")
-    student_id = input("student id: ")
-    Student = student(name, degree, student_id)
-    return Student
+
 
 
 
